@@ -12,7 +12,7 @@ Lack of preventive healthcare awareness in rural & semi-urban areas, language ba
 
 ## 🛠️ Tech Stack
 - NLP: Rasa / Dialogflow  
-- Backend: Python / Node.js  
+- Backend : Python
 - Deployment: Cloud (AWS / GCP / Azure)  
 - Communication: WhatsApp / SMS APIs  
 
