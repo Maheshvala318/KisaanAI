@@ -14,7 +14,11 @@ Lack of preventive healthcare awareness in rural & semi-urban areas, language ba
 - NLP: Rasa / Dialogflow  
 - Backend : Python
 - Deployment: Cloud (AWS / GCP / Azure)  
-- Communication: WhatsApp / SMS APIs  
+- Communication: WhatsApp / SMS APIs
+
+## Graphical User Interface
+<img width="1202" height="667" alt="image" src="https://github.com/user-attachments/assets/d3b75a07-8f9e-4253-bf18-7516ccc49ead" />
+
 
 ## ⚙️ System Architecture
 <img width="832" height="784" alt="image" src="https://github.com/user-attachments/assets/46e03d21-cc2d-43c5-b2e6-48884c9c066d" />
