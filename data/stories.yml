@@ -1,0 +1,74 @@
+version: "3.1"
+
+stories:
+
+# --- General mood conversation ---
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+# --- Disease information conversation ---
+- story: greet and ask disease info
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_symptoms
+  - action: action_provide_disease_info
+
+- story: alerting symptoms path
+  steps:
+  - intent: ask_alert
+  - action: action_provide_disease_info
+
+- story: treatment path
+  steps:
+  - intent: ask_treatment
+  - action: action_provide_disease_info
+
+- story: medicine path
+  steps:
+  - intent: ask_medicine
+  - action: action_provide_disease_info
+
+- story: home remedy path
+  steps:
+  - intent: ask_home_remedy
+  - action: action_provide_disease_info
+
+- story: prevention path
+  steps:
+  - intent: ask_prevention
+  - action: action_provide_disease_info
+
+- story: duration path
+  steps:
+  - intent: ask_duration
+  - action: action_provide_disease_info
+
+- story: danger path
+  steps:
+  - intent: ask_danger
+  - action: action_provide_disease_info
