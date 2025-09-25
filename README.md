@@ -17,7 +17,8 @@ Lack of preventive healthcare awareness in rural & semi-urban areas, language ba
 - Communication: WhatsApp / SMS APIs
 
 ## Graphical User Interface
-<img width="1202" height="667" alt="image" src="https://github.com/user-attachments/assets/d3b75a07-8f9e-4253-bf18-7516ccc49ead" />
+<img width="1893" height="875" alt="image" src="https://github.com/user-attachments/assets/51401d97-2b33-41e7-91f8-750955143e82" />
+
 
 
 ## ⚙️ System Architecture
