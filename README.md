@@ -6,7 +6,8 @@ Al-Driven Public Health Chatbot for Disease Awareness
 Lack of preventive healthcare awareness in rural & semi-urban areas, language barriers, and limited access to authentic information.
 
 ## 🎯 Objectives
-- Multilingual chatbot for disease awareness  
+- Multilingual chatbot for disease awareness
+- Voice Suport
 - Vaccination reminders & outbreak alerts  
 - Integration with government health databases  
 
