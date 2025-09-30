@@ -62,6 +62,7 @@
     <h3>🛠️ Tech Stack</h3>
     <ul>
       <li><strong>NLP:</strong> Rasa for structured query and farmer interaction flows</li>
+       <li><strong>LLM:</strong> RAG system</li>
       <li><strong>Backend:</strong> Python</li>
       <li><strong>Deployment:</strong> Cloud (AWS / GCP / Azure)</li>
       <li><strong>Communication:</strong> WhatsApp / SMS APIs</li>
