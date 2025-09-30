@@ -75,7 +75,8 @@
 
   <section>
     <h3>⚙️ System Architecture</h3>
-    <img src="https://github.com/user-attachments/assets/46e03d21-cc2d-43c5-b2e6-48884c9c066d" alt="KisaanAI System Architecture">
+    <img width="909" height="827" alt="image" src="https://github.com/user-attachments/assets/c6b707c7-eaea-4a2e-9a10-34f252cd8f9e" />
+
   </section>
 
   <section>
