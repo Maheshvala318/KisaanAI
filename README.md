@@ -2,23 +2,34 @@ KisaanAI
 
 AI-Driven Agricultural Chatbot for Farmers
 
+AI-Driven Agricultural Chatbot for Farmers
 📌 Problem Statement
 
-Farmers face scattered information on crop care, soil health, pest control, subsidies, and weather risks, leading to crop losses, financial strain, and delayed interventions.
+Farmers face scattered and unreliable information on:
+
+Crop care and soil management
+
+Pest control and disease prevention
+
+Government subsidies and schemes
+
+Weather-related risks
+
+These gaps often lead to crop losses, financial strain, and delayed interventions.
 
 🎯 Objectives
 
-Multilingual chatbot for agriculture guidance
+Multilingual chatbot for easy communication in regional languages
 
-Voice support for easy interaction
+Voice support for hands-free interaction
 
-Crop/soil/pest image analysis and alerts
+Image analysis: Farmers can upload crop, soil, or pest images for AI-based recommendations
 
-Integration with government agricultural schemes and advisory databases
+Government integration: Guidance aligned with agricultural schemes and advisories
 
 🛠️ Tech Stack
 
-NLP: Rasa for structured query & farmer interaction flows
+NLP: Rasa for structured query and farmer interaction flows
 
 Backend: Python
 
