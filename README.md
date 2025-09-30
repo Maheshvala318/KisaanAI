@@ -5,11 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KisaanAI - AI-Driven Agricultural Chatbot</title>
   <style>
-    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; background-color: #f9f9f9; color: #333; }
-    h1, h2, h3 { color: #2c3e50; }
-    ul { margin-left: 20px; }
-    img { max-width: 100%; height: auto; border-radius: 10px; margin: 15px 0; }
-    section { margin-bottom: 40px; }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin: 15px 0;
+    }
+    section {
+      margin-bottom: 40px;
+    }
   </style>
 </head>
 <body>
