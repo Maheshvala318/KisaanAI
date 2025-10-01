@@ -71,7 +71,6 @@
 
   <section>
     <h3>Graphical User Interface</h3>
-    <img src="https://github.com/user-attachments/assets/51401d97-2b33-41e7-91f8-750955143e82" alt="KisaanAI GUI">
   </section>
 
   <section>
