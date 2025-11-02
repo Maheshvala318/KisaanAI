@@ -71,6 +71,8 @@
 
   <section>
     <h3>Graphical User Interface</h3>
+    <img width="1916" height="828" alt="image" src="https://github.com/user-attachments/assets/7b087ab0-534b-4a56-970e-d936322c188b" />
+
   </section>
 
   <section>
