@@ -1,0 +1,34 @@
+# ============================================
+# KisaanAI Health Chatbot — Python Dependencies
+# ============================================
+
+# Rasa
+rasa==3.6.20
+rasa-sdk==3.6.2
+
+# LLM Providers
+google-generativeai>=0.8.0
+groq>=0.9.0
+
+# Data & ML
+pandas>=2.0.0
+numpy>=1.24.0
+scikit-learn>=0.24.2,<1.2.0
+faiss-cpu>=1.7.4
+
+# Image Classification
+torch>=2.0.0
+torchvision>=0.15.0
+Pillow>=10.0.0
+
+# API Server (for image model)
+fastapi>=0.110.0
+uvicorn>=0.30.0
+python-multipart>=0.0.9
+
+# Utilities
+python-dotenv>=1.0.0
+
+# Translation (optional)
+# googletrans==4.0.0-rc.1
+# langdetect>=1.0.9

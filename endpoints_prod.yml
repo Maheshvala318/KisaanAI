@@ -1,0 +1,17 @@
+# endpoints_prod.yml
+# Production configuration for unified Docker container (HF Spaces/Render)
+
+# All services run on localhost inside the SAME container
+action_endpoint:
+  url: "http://localhost:5055/webhook"
+
+# Tracker store (Memory for demo, can be SQL for production)
+# tracker_store:
+#    type: sql
+#    dialect: "postgresql"
+#    url: ${DB_URL}
+#    db: "rasa"
+
+# NLU/Core models are loaded from the /app/models directory in the container
+models:
+  url: http://localhost:5005/models

@@ -1,61 +1,91 @@
 version: "3.1"
 
 intents:
-  # General conversation
   - greet
   - goodbye
+  - bot_challenge
+  - ask_health
   - affirm
   - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-
-  # Disease-related queries
-  - ask_symptoms
-  - ask_alert
-  - ask_treatment
-  - ask_medicine
-  - ask_home_remedy
-  - ask_prevention
-  - ask_duration
-  - ask_danger
 
 entities:
+  - crop
   - disease
+  - symptom
 
 slots:
+  crop:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: crop
+
   disease:
     type: text
     influence_conversation: true
     mappings:
       - type: from_entity
         entity: disease
+      - type: custom
 
+  detected_disease:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: custom
+
+  image_metadata:
+    type: any
+    influence_conversation: false
+    mappings:
+      - type: custom
+
+  last_disease:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: custom
+
+  symptom:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: symptom
+
+  user_language:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: custom
+
+  last_answer:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: custom
+
+  image_intro_sent:
+    type: bool
+    influence_conversation: false
+    initial_value: false
+    mappings:
+      - type: custom
 
 responses:
-  # General conversation responses
   utter_greet:
-    - text: "Hello! I can provide info on symptoms, treatment, medicine, home remedies, and prevention of diseases. Which disease would you like to know about?"
-
-  utter_cheer_up:
-    - text: "Here is something to cheer you up:"
-      image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-    - text: "Did that help you?"
-
-  utter_happy:
-    - text: "Great, carry on!"
+    - text: "Hello! I am KisaanAI. Tell me your crop and symptoms."
 
   utter_goodbye:
-    - text: "Bye!"
+    - text: "Goodbye! Stay safe and take care of your crops."
 
   utter_iamabot:
-    - text: "I am a bot, powered by Rasa."
+    - text: "I am KisaanAI, your virtual farming assistant."
+
+  utter_fallback:
+    - text: "Sorry, I didn't understand that. Can you please rephrase?"
 
 actions:
-  - action_provide_disease_info
-
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+  - action_get_disease_info
+  - action_get_disease_info_smart

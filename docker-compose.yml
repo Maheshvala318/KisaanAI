@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  # Rasa NLU & Dialogue Server
+  rasa:
+    image: rasa/rasa:3.6.20-full
+    ports:
+      - "5005:5005"
+    volumes:
+      - .:/app
+    command: >
+      run --enable-api --cors "*"
+    networks:
+      - kisaan-network
+    depends_on:
+      - action_server
+
+  # Rasa Custom Action Server
+  action_server:
+    build:
+      context: .
+      dockerfile: Dockerfile.actions
+    ports:
+      - "5055:5055"
+    environment:
+      - GENAI_API_KEY=${GENAI_API_KEY}
+      - GROQ_API_KEY=${GROQ_API_KEY}
+    networks:
+      - kisaan-network
+
+  # Plant Disease Image Classification API
+  plant_model_api:
+    build:
+      context: .
+      dockerfile: Dockerfile.image_model
+    ports:
+      - "8001:8001"
+    networks:
+      - kisaan-network
+
+  # React Frontend (served via Nginx in production)
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: ../Dockerfile.frontend
+      args:
+        - REACT_APP_RASA_URL=http://localhost:5005/webhooks/rest/webhook
+        - REACT_APP_PLANT_API_URL=http://localhost:8001/predict
+    ports:
+      - "3000:80"
+    depends_on:
+      - rasa
+      - plant_model_api
+    networks:
+      - kisaan-network
+
+networks:
+  kisaan-network:
+    driver: bridge

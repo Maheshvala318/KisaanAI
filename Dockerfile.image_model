@@ -1,0 +1,22 @@
+FROM python:3.9-slim
+
+WORKDIR /app
+
+# Install system dependencies for PyTorch/Pillow
+RUN apt-get update && apt-get install -y \
+    libgl1-mesa-glx \
+    libglib2.0-0 \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy requirements and install
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the image model service and models
+COPY Image_model /app/Image_model
+
+WORKDIR /app/Image_model
+
+EXPOSE 8001
+
+CMD ["uvicorn", "plant_model_service:app", "--host", "0.0.0.0", "--port", "8001"]

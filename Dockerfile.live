@@ -1,0 +1,41 @@
+# Dockerfile.live
+# High-performance unified backend for KisaanAI Health Chatbot
+# Targets: Hugging Face Spaces (Docker) or Render
+
+FROM python:3.9-slim
+
+# Set environment variables
+ENV PYTHONUNBUFFERED=1
+ENV RASA_HOME=/app
+ENV PORT=7860
+
+WORKDIR /app
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    curl \
+    nginx \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy requirements and install
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy project files
+COPY actions /app/actions
+COPY data /app/data
+COPY models /app/models
+COPY Image_model /app/Image_model
+COPY config.yml domain.yml endpoints.yml credentials.yml /app/
+
+# Copy deployment scripts
+COPY scripts/entrypoint.sh /app/entrypoint.sh
+COPY scripts/nginx_prod.conf /etc/nginx/nginx.conf
+RUN chmod +x /app/entrypoint.sh
+
+# Expose the HF Default Port
+EXPOSE 7860
+
+# Use the entrypoint script to launch all 4 services (Rasa, Actions, ML, Nginx)
+ENTRYPOINT ["/app/entrypoint.sh"]

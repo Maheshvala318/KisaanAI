@@ -1,13 +1,27 @@
 version: "3.1"
-
 rules:
+
+- rule: Greet the user
+  steps:
+  - intent: greet
+  - action: utter_greet
 
 - rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye
   - action: utter_goodbye
 
-- rule: Say 'I am a bot' anytime the user challenges
+- rule: Respond when asked if bot
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+- rule: Handle any health query with smart action
+  steps:
+  - intent: ask_health
+  - action: action_get_disease_info_smart
+
+- rule: Fallback rule
+  steps:
+  - intent: nlu_fallback
+  - action: action_get_disease_info_smart
