@@ -65,5 +65,6 @@ image_model/data/
 
 # ----- Misc -----
 *.log
+rasa_log.txt
 push_error.txt
 files_in_git.txt

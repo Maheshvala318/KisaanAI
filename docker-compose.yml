@@ -13,7 +13,14 @@ services:
     networks:
       - kisaan-network
     depends_on:
-      - action_server
+      action_server:
+        condition: service_healthy
+    restart: always
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5005"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
 
   # Rasa Custom Action Server
   action_server:
@@ -27,6 +34,7 @@ services:
       - GROQ_API_KEY=${GROQ_API_KEY}
     networks:
       - kisaan-network
+    restart: always
 
   # Plant Disease Image Classification API
   plant_model_api:
@@ -37,6 +45,7 @@ services:
       - "8001:8001"
     networks:
       - kisaan-network
+    restart: always
 
   # React Frontend (served via Nginx in production)
   frontend:
@@ -49,8 +58,16 @@ services:
     ports:
       - "3000:80"
     depends_on:
-      - rasa
-      - plant_model_api
+      rasa:
+        condition: service_healthy
+      plant_model_api:
+        condition: service_healthy
+    restart: always
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
     networks:
       - kisaan-network
 

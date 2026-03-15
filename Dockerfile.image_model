@@ -19,4 +19,7 @@ WORKDIR /app/Image_model
 
 EXPOSE 8001
 
+HEALTHCHECK --interval=30s --timeout=10s --retries=3 \
+  CMD python -c "import requests; requests.get('http://localhost:8001/doc')" || exit 1
+
 CMD ["uvicorn", "plant_model_service:app", "--host", "0.0.0.0", "--port", "8001"]
