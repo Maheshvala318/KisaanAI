@@ -1,0 +1,68 @@
+# ============================================
+# KisaanAI Health Chatbot — .gitignore
+# ============================================
+
+# ----- Python -----
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+
+# ----- Virtual Environments -----
+venv/
+rasa_env/
+.venv/
+env/
+
+# ----- Environment & Secrets -----
+.env
+.env.local
+.env.production
+
+# ----- Rasa -----
+# ----- Rasa -----
+# Ignore all models
+models/*
+.rasa/
+.rasa_pids/
+rasa-debug.log
+
+# ----- ML Models & Indexes -----
+*.tar.gz
+*.pth
+*.pt
+*.h5
+*.onnx
+faiss_disease.index
+faiss_metadata.json
+
+# ----- Node.js -----
+node_modules/
+npm-debug.log*
+
+# ----- IDE -----
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# ----- OS -----
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ----- Build Output -----
+frontend/build/
+
+# ----- Kaggle -----
+image_model/data/
+
+# ----- Misc -----
+*.log
+push_error.txt
+files_in_git.txt
